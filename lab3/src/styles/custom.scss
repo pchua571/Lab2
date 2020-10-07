@@ -1,0 +1,173 @@
+@import "variables";
+@import "./src/styles/bootstrap/scss/bootstrap";
+
+/* That imports the entirety of bootstrap, taken from ../../node_modules/bootstrap/scss/bootstrap.scss
+ we can optimize it by only selectively including the modules we need:
+*/
+
+/* 
+ @import "functions";
+ @import "variables";
+ @import "mixins";
+ @import "root";
+ @import "reboot";
+ @import "type";
+ @import "images";
+ @import "code";
+ @import "grid";
+ @import "tables";
+ @import "forms";
+ @import "buttons";
+ @import "transitions";
+ @import "dropdown";
+ @import "button-group";
+ @import "input-group";
+ @import "custom-forms";
+ @import "nav";
+ @import "navbar";
+ @import "card";
+ @import "breadcrumb";
+ @import "pagination";
+ @import "badge";
+ @import "jumbotron";
+ @import "alert";
+ @import "progress";
+ @import "media";
+ @import "list-group";
+ @import "close";
+ @import "modal";
+ @import "tooltip";
+ @import "popover";
+ @import "carousel";
+ @import "utilities";
+ @import "print";
+ */
+
+@mixin border-bottom($size) {
+	border-bottom: $size solid #000;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	background: $body-background;
+	background-color: azure;
+	color: black;
+	font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+	font-size: $primary-font-size;
+	background-clip: border-box;
+}
+
+p {
+	font-size: $secondary-font-size;
+}
+
+section.#{$main-content-class} {
+	h2 {
+		@include border-bottom(2px);
+	}
+	p {
+		@if $main-content-class==book {
+			font-size: 12pt;
+		} @else {
+			font-size: $secondary-font-size+6pt;
+		}
+		main & {
+			color: green;
+		}
+		span {
+			font-style: italic;
+		}
+	}
+}
+.container{
+		background-color:blue;
+}
+
+.card{
+	background-color:azure;
+}
+.card-title{
+	font-size: 24pt;
+}
+.btn-primary{
+	color:#767676;
+	background-color:#ffffff;
+}
+.card-img-top{
+	height: 300px;
+	width: 200px;
+}
+
+$grid-columns: 4;
+
+.sidebar {
+	margin: 0;
+	padding: 0;
+	width: 200px;
+	background-color: #f1f1f1;
+	color: black;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+  }
+
+@media screen and (max-width: 700px) {
+	.sidebar {
+	  width: 100%;
+	  height: auto;
+	  position: relative;
+	}
+	.sidebar a {float: left;}
+	div.content {margin-left: 0;}
+  }
+
+  
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+	.sidebar a {
+	  text-align: center;
+	  float: none;
+	}
+  }
+
+  .sidebar a {
+	display: block;
+	color: black;
+	padding: 16px;
+	text-decoration: none;
+  }
+  
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+	margin-left: 200px;
+	padding: 1px 16px;
+	height: 1000px;
+  }
+
+  .image{
+	position: absolute;
+    top: 100px;
+    right: 100px;
+  }
+
+  a{
+	  color: #4d7d7d;
+  }
+ 
+  /* Navigation links */
+.topnav-left {
+	float: left;
+	text-decoration: none;
+	font-size: 17px;
+	width: 50%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  }
+
+  .form-inline{
+	  float:right;
+  }
+

@@ -1,0 +1,59 @@
+<h1>Name: {{showInfo.name}}</h1>
+
+
+{{#if showInfo.image}}
+<img src={{showInfo.image.medium}} alt="Promo picture">
+
+{{else}}
+<li>Image Not available</li>
+
+{{/if}}
+
+<ul>
+<li>Language: {{showInfo.language}}</li>
+{{#if showInfo.genres}}
+<li>Genre: {{showInfo.genres}}</li> 
+{{else}}
+<li>Genres not available</li>
+
+{{/if}}
+
+{{#if showInfo.runtime}}
+<li>Average Episode Length: {{showInfo.runtime}}</li>
+{{else}}
+<li>Runtime not available</li>
+
+{{/if}}
+
+{{#if showInfo.premiered}}
+<li>Average Episode Length: {{showInfo.premiered}}</li>
+{{else}}
+<li>First Episode date not available</li>
+
+{{/if}}
+
+{{#if showInfo.status}}
+<li>Current Status: {{showInfo.status}}</li>
+{{else}}
+<li>Current status not available</li>
+
+{{/if}}
+
+{{#if showInfo.summary}}
+<li>Summary: {{{showInfo.summary}}}</li>
+{{else}}
+<li>Summary not available</li>
+{{/if}}
+
+{{#if showInfo.rating}}
+<li>Average Rating: {{showInfo.rating.average}}</li>
+
+{{else}}
+<li>Rating not available</li>
+
+
+
+{{/if}}
+
+
+</ul>

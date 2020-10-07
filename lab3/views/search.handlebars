@@ -1,0 +1,15 @@
+{{#if error}}
+<p>No search term was entered, please input a search term</p>
+{{else if no_results}}
+<h2>Could not find any matches, please try another term</h2>
+{{else}}
+<ul class="list-unstyled">
+{{#each data}}
+<li>
+    <h1>
+    <a href='/show/{{this.show.id}}'>{{this.show.name}}</a>
+    </h1>
+</li>
+{{/each}}
+</ul>
+{{/if}}
